@@ -12,6 +12,8 @@ npm-debug.log
 .env.*
 !.env.example
 public/.env
+out/.env
+out/.current_session
 
 # Docker local overrides
 docker-compose.local.yml
