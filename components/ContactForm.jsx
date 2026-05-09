@@ -94,7 +94,7 @@ export default function ContactForm() {
                         {status === 'loading' ? (
                             <>
                                 <Loader2 className="h-5 w-5 animate-spin" />
-                                Mengaktifkan...
+                                Loading...
                             </>
                         ) : (
                             'Kirim Pesan'

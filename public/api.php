@@ -26,6 +26,8 @@ $db_host = $_ENV['DB_HOST'] ?? 'localhost';
 $db_user = $_ENV['DB_USER'] ?? '';
 $db_pass = $_ENV['DB_PASS'] ?? '';
 $db_name = $_ENV['DB_NAME'] ?? 'hasnalabs_db';
+$admin_user = $_ENV['ADMIN_USER'] ?? '';
+$admin_pass = $_ENV['ADMIN_PASS'] ?? '';
 
 // --- Database Connection ---
 $conn = new mysqli($db_host, $db_user, $db_pass);
@@ -76,12 +78,18 @@ if ($action === 'login' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $input['username'] ?? '';
     $password = $input['password'] ?? '';
 
-    // Simplified auth for demonstration, should be more secure in production
-    if ($username === 'admin' && ($password === 'hasnalabs2026')) {
+    if (empty($username) || empty($password)) {
+        http_response_code(400);
+        echo json_encode(["error" => "Username dan password tidak boleh kosong"]);
+        exit;
+    }
+
+    // Use credentials from .env, ensure they are configured
+    if (!empty($admin_user) && !empty($admin_pass) && $username === $admin_user && $password === $admin_pass) {
         echo json_encode(["success" => true, "token" => "hasna_secret_session"]);
     } else {
         http_response_code(401);
-        echo json_encode(["error" => "Login gagal"]);
+        echo json_encode(["error" => "Username atau password salah"]);
     }
     exit;
 }
