@@ -4,7 +4,7 @@ import { Mail, User, Calendar, MessageSquare, LogOut } from 'lucide-react';
 import LogoutButton from '../../components/LogoutButton';
 
 export const metadata = {
-    title: "Mini CRM Dashboard | Aliftek",
+    title: "Mini CRM Dashboard | HasnaLabs",
     description: "Dashboard backend untuk melihat pesan dari klien.",
 };
 
@@ -22,7 +22,7 @@ export default function AdminPage() {
                             <h1 className="text-3xl font-bold text-slate-900 border-l-4 border-primary-600 pl-4">
                                 Mini CRM Dashboard
                             </h1>
-                            <p className="text-slate-600 mt-2">Daftar pesan masuk dari form kontak Aliftek.</p>
+                            <p className="text-slate-600 mt-2">Daftar pesan masuk dari form kontak HasnaLabs.</p>
                         </div>
                         <LogoutButton />
                     </div>
@@ -63,7 +63,7 @@ export default function AdminPage() {
             <footer className="bg-white py-12 border-t border-slate-200 mt-auto">
                 <div className="container mx-auto px-4 text-center">
                     <p className="text-sm text-slate-500">
-                        &copy; {new Date().getFullYear()} Aliftek. Admin Dashboard.
+                        &copy; {new Date().getFullYear()} HasnaLabs. Admin Dashboard.
                     </p>
                 </div>
             </footer>

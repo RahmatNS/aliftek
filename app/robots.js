@@ -5,6 +5,6 @@ export default function robots() {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://aliftek.id/sitemap.xml',
+        sitemap: 'https://hasnalabs.com/sitemap.xml',
     };
 }

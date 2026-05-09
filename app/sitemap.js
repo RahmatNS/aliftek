@@ -1,5 +1,5 @@
 export default function sitemap() {
-    const baseUrl = 'https://aliftek.id';
+    const baseUrl = 'https://hasnalabs.com';
 
     return [
         {

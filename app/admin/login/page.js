@@ -47,7 +47,7 @@ export default function LoginPage() {
                             <Lock className="h-8 w-8" />
                         </div>
                         <h1 className="text-2xl font-bold text-slate-900">Admin Login</h1>
-                        <p className="text-slate-500 mt-2">Masuk untuk mengelola pesan CRM Aliftek.</p>
+                        <p className="text-slate-500 mt-2">Masuk untuk mengelola pesan CRM HasnaLabs.</p>
                     </div>
 
                     <form onSubmit={handleLogin} className="space-y-4">

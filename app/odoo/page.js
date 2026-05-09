@@ -2,7 +2,7 @@ import Header from '../../components/Header';
 import { CheckCircle2, LayoutDashboard, Calculator, Users, Package, Settings } from 'lucide-react';
 
 export const metadata = {
-    title: "Odoo ERP Implementation | Aliftek",
+    title: "Odoo ERP Implementation | HasnaLabs",
     description: "Transformasi bisnis Anda dengan sistem ERP Odoo yang terintegrasi untuk Accounting, Inventory, CRM, dan lainnya.",
 };
 
@@ -114,7 +114,7 @@ export default function OdooPage() {
                     <div className="container mx-auto px-4">
                         <h2 className="text-3xl font-bold mb-6">Siap Bertransformasi Digital?</h2>
                         <p className="text-primary-100 mb-10 max-w-2xl mx-auto text-lg">
-                            Hubungi tim Aliftek hari ini untuk demo Odoo gratis dan konsultasikan kebutuhan ERP perusahaan Anda.
+                            Hubungi tim HasnaLabs hari ini untuk demo Odoo gratis dan konsultasikan kebutuhan ERP perusahaan Anda.
                         </p>
                         <a href="/#contact" className="bg-white text-primary-600 px-10 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all inline-block">
                             Hubungi Kami Sekarang
@@ -126,7 +126,7 @@ export default function OdooPage() {
             <footer className="bg-white py-12 border-t border-slate-200">
                 <div className="container mx-auto px-4 text-center">
                     <p className="text-sm text-slate-500">
-                        &copy; {new Date().getFullYear()} Aliftek. All rights reserved.
+                        &copy; {new Date().getFullYear()} HasnaLabs. All rights reserved.
                     </p>
                 </div>
             </footer>

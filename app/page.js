@@ -22,7 +22,7 @@ export default function Home() {
                 Solusi Teknologi untuk <span className="text-primary-600">Bisnis Modern</span>
               </h1>
               <p className="mt-6 text-lg leading-8 text-slate-600">
-                Aliftek berdedikasi untuk memberikan layanan konsultasi IT terbaik, membantu transformasi digital bisnis Anda dengan teknologi terkini.
+                HasnaLabs berdedikasi untuk memberikan layanan konsultasi IT terbaik, membantu transformasi digital bisnis Anda dengan teknologi terkini.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
@@ -105,12 +105,12 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="lg:flex lg:items-center lg:gap-16">
               <div className="lg:w-1/2">
-                <h2 className="text-base font-semibold leading-7 text-primary-600 uppercase tracking-wide">Tentang Aliftek</h2>
+                <h2 className="text-base font-semibold leading-7 text-primary-600 uppercase tracking-wide">Tentang HasnaLabs</h2>
                 <p className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                   Partner Transformasi Digital Anda
                 </p>
                 <p className="mt-6 text-lg leading-8 text-slate-600">
-                  Aliftek lahir dari visi untuk menjembatani kesenjangan antara potensi bisnis dan implementasi teknologi. Kami bukan sekadar vendor, tapi partner yang peduli pada pertumbuhan jangka panjang Anda.
+                  HasnaLabs lahir dari visi untuk menjembatani kesenjangan antara potensi bisnis dan implementasi teknologi. Kami bukan sekadar vendor, tapi partner yang peduli pada pertumbuhan jangka panjang Anda.
                 </p>
               </div>
               <div className="mt-16 lg:mt-0 lg:w-1/2">
@@ -159,7 +159,7 @@ export default function Home() {
       <footer className="bg-white py-12 border-t border-slate-200">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} Aliftek. All rights reserved.
+            &copy; {new Date().getFullYear()} HasnaLabs. All rights reserved.
           </p>
         </div>
       </footer>

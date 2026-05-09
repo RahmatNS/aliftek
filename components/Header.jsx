@@ -6,7 +6,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2">
           <Laptop className="h-6 w-6 text-primary-600" />
-          <span className="text-xl font-bold tracking-tight text-slate-900">Aliftek</span>
+          <span className="text-xl font-bold tracking-tight text-slate-900">HasnaLabs</span>
         </div>
 
         <nav className="hidden md:flex items-center gap-8">

@@ -1,6 +1,6 @@
-# Aliftek Landing Page
+# HasnaLabs Landing Page
 
-Repositori ini berisi source code untuk landing page Aliftek (aliftek.id), dibangun menggunakan Next.js dan Docker.
+Repositori ini berisi source code untuk landing page HasnaLabs (hasnalabs.com), dibangun menggunakan Next.js dan Docker.
 
 ## Menjalankan Development
 
