@@ -1,0 +1,11 @@
+<Files ".env">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Ensure index.html is served for clean URLs if not using Next.js routing
+# But for a simple static site on cPanel, this helps.
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1.html [L,QSA]
