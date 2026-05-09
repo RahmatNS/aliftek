@@ -86,7 +86,9 @@ if ($action === 'login' && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Use credentials from .env, ensure they are configured
     if (!empty($admin_user) && !empty($admin_pass) && $username === $admin_user && $password === $admin_pass) {
-        echo json_encode(["success" => true, "token" => "hasna_secret_session"]);
+        $token = bin2hex(random_bytes(32));
+        file_put_contents(__DIR__ . '/.current_session', $token);
+        echo json_encode(["success" => true, "token" => $token]);
     } else {
         http_response_code(401);
         echo json_encode(["error" => "Username atau password salah"]);
@@ -97,7 +99,9 @@ if ($action === 'login' && $_SERVER['REQUEST_METHOD'] === 'POST') {
 // 3. Handle Fetch Messages (Admin Only)
 if ($action === 'messages' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     $token = $_GET['token'] ?? '';
-    if ($token !== 'hasna_secret_session') {
+    $saved_token = file_exists(__DIR__ . '/.current_session') ? file_get_contents(__DIR__ . '/.current_session') : '';
+    
+    if (empty($token) || $token !== $saved_token) {
         http_response_code(403);
         echo json_encode(["error" => "Unauthorized"]);
         exit;
@@ -105,8 +109,10 @@ if ($action === 'messages' && $_SERVER['REQUEST_METHOD'] === 'GET') {
 
     $result = $conn->query("SELECT * FROM contacts ORDER BY created_at DESC");
     $messages = [];
-    while ($row = $result->fetch_assoc()) {
-        $messages[] = $row;
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $messages[] = $row;
+        }
     }
     echo json_encode($messages);
     exit;
