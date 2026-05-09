@@ -18,15 +18,17 @@ export default function LoginPage() {
         setError('');
 
         try {
-            const res = await fetch('/api/auth/login', {
+            const res = await fetch('/api.php?action=login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
             });
 
-            if (res.ok) {
+            const data = await res.json();
+
+            if (res.ok && data.success) {
+                localStorage.setItem('admin_token', data.token);
                 router.push('/admin');
-                router.refresh();
             } else {
                 setError('Username atau Password salah.');
             }

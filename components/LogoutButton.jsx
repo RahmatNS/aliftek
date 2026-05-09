@@ -6,10 +6,9 @@ import { LogOut } from 'lucide-react';
 export default function LogoutButton() {
     const router = useRouter();
 
-    const handleLogout = async () => {
-        await fetch('/api/auth/logout', { method: 'POST' });
+    const handleLogout = () => {
+        localStorage.removeItem('admin_token');
         router.push('/admin/login');
-        router.refresh();
     };
 
     return (

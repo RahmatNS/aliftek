@@ -11,6 +11,7 @@ out
 .env.production
 .env.*
 !.env.example
+public/.env
 
 # Docker local overrides
 docker-compose.local.yml
