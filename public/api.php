@@ -33,20 +33,26 @@ $admin_pass = $_ENV['ADMIN_PASS'] ?? '';
 $conn = new mysqli($db_host, $db_user, $db_pass);
 
 if ($conn->connect_error) {
-    die(json_encode(["error" => "Connection failed: " . $conn->connect_error]));
+    http_response_code(500);
+    die(json_encode(["error" => "Database connection failed: " . $conn->connect_error]));
 }
 
-// Create database and table if not exists
-$conn->query("CREATE DATABASE IF NOT EXISTS $db_name");
-$conn->select_db($db_name);
+// --- Database Selection & Initialization ---
+if (!$conn->select_db($db_name)) {
+    http_response_code(500);
+    die(json_encode(["error" => "Database '$db_name' not found. Please create it in cPanel."]));
+}
 
-$conn->query("CREATE TABLE IF NOT EXISTS contacts (
+if (!$conn->query("CREATE TABLE IF NOT EXISTS contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     message TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)");
+)")) {
+    http_response_code(500);
+    die(json_encode(["error" => "Failed to create table: " . $conn->error]));
+}
 
 $action = $_GET['action'] ?? '';
 
@@ -64,7 +70,7 @@ if ($action === 'contact' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($conn->query($sql)) {
             echo json_encode(["success" => true, "message" => "Pesan terkirim"]);
         } else {
-            echo json_encode(["error" => "Gagal menyimpan pesan"]);
+            echo json_encode(["error" => "Gagal menyimpan pesan: " . $conn->error]);
         }
     } else {
         echo json_encode(["error" => "Data tidak lengkap"]);
